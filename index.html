@@ -4,8 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dictionary</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/sass/main.css" />
   </head>
   <body>
-    <link rel="stylesheet" href="./src/sass/main.css" />
+    <main class="main">
+      <div class="container">
+        <h1 class="title">Your dictionary</h1>
+
+        <form class="form">
+          <div class="input-wrap">
+            <input
+              type="text"
+              placeholder="Enter word"
+              name="word"
+              id="word-input"
+              autocomplete="off"
+              value=""
+            />
+          </div>
+          <button class="btn" type="submit">Search</button>
+        </form>
+      </div>
+    </main>
   </body>
 </html>

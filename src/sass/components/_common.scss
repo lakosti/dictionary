@@ -1,1 +1,16 @@
-
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: beige;
+  font-family: "Sofia Sans", sans-serif;
+}
+.container {
+  max-width: 300px; /* Optional max width */
+  padding-left: 15px;
+  padding-right: 15px;
+  outline: 1px solid red;
+  margin: 0 auto;
+}
