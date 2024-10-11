@@ -16,21 +16,62 @@
   <body>
     <main class="main">
       <div class="container">
-        <h1 class="title">Your dictionary</h1>
+        <h1 class="title">Your Dictionary</h1>
 
         <form class="form">
           <div class="input-wrap">
-            <input
-              type="text"
-              placeholder="Enter word"
-              name="word"
-              id="word-input"
-              autocomplete="off"
-              value=""
-            />
+            <div class="input">
+              <input
+                type="text"
+                placeholder="Enter a word.."
+                name="word"
+                id="word-input"
+                autocomplete="off"
+                value=""
+              />
+            </div>
+            <button class="btn" type="submit">Search</button>
           </div>
-          <button class="btn" type="submit">Search</button>
         </form>
+
+        <p class="error">Word not found</p>
+
+        <div class="results">
+          <div class="res-info">
+            <p class="res-word">Mother</p>
+            <div class="res-img">
+              <img
+                src="./src/img/audio.png"
+                alt="Image"
+                width="30"
+                height="30"
+              />
+            </div>
+          </div>
+
+          <ul class="res-list">
+            <li class="res-item">
+              <span class="res-item__part">Noun</span>
+
+              <div class="res-item__defenitions">
+                <div class="res-item__defenition">
+                  <p>ERGER ERER REGER</p>
+                  <div class="res-item__example">LOLOLOLO</div>
+                </div>
+              </div>
+            </li>
+            <li class="res-item">
+              <span class="res-item__part">Noun</span>
+
+              <div class="res-item__defenitions">
+                <div class="res-item__defenition">
+                  <p>ERGER ERER REGER</p>
+                  <div class="res-item__example">LOLOLOLO</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </main>
   </body>
