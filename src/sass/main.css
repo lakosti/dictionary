@@ -93,18 +93,15 @@ body {
   padding: 10px;
   background-color: rgba(213, 202, 202, 0.3);
 }
-
 .res-item__part {
   font-size: 14px;
   color: rgb(152, 95, 131);
   margin-bottom: 10px;
 }
-
 .res-item__defenition {
   font-size: 18px;
 }
-
 .res-item__example {
-  font-size: 16px;
+  font-size: 14px;
   color: grey;
 }/*# sourceMappingURL=main.css.map */

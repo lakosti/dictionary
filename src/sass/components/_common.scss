@@ -35,7 +35,6 @@ body {
   margin: 0 auto;
   margin-bottom: 15px;
 }
-
 .input-wrap {
   display: flex;
   align-items: center;
@@ -46,7 +45,6 @@ body {
   padding: 8px;
   width: 400px;
 }
-
 .btn {
   padding: 8px;
   width: 100px;
@@ -60,11 +58,9 @@ body {
   font-size: 30px;
   text-align: center;
 }
-
 // .results {
 //   display: none;
 // }
-
 .res-info {
   display: flex;
   gap: 15px;
@@ -81,27 +77,28 @@ body {
   height: 30px;
   cursor: pointer;
 }
-
 .res-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
 .res-item {
   padding: 10px;
   background-color: rgba(213, 202, 202, 0.3);
-}
-.res-item__part {
-  font-size: 14px;
-  color: rgb(152, 95, 131);
-  margin-bottom: 10px;
-}
-.res-item__defenition {
-  font-size: 18px;
-}
-.res-item__example {
-  font-size: 16px;
-  color: grey;
+
+  &__part {
+    font-size: 14px;
+    color: rgb(152, 95, 131);
+    margin-bottom: 10px;
+  }
+
+  &__defenition {
+    font-size: 18px;
+  }
+
+  &__example {
+    font-size: 14px;
+    color: grey;
+  }
 }
