@@ -2,6 +2,8 @@
 
 A simple and efficient dictionary application built with JavaScript that leverages an API to provide definitions, synonyms, antonyms, and more.
 
+![Alt text](src/img/desc.png)
+
 ## Features
 
 - Search for words and retrieve definitions
@@ -18,4 +20,4 @@ A simple and efficient dictionary application built with JavaScript that leverag
 
 ## API Used
 
-This project uses the https://dictionaryapi.dev/ for fetching word data. 
+This project uses the https://dictionaryapi.dev/ for fetching word data.
