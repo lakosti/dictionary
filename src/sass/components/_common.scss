@@ -3,6 +3,9 @@
   padding: 0;
   margin: 0;
 }
+li {
+  list-style: none;
+}
 body {
   background: rgb(238, 174, 202);
   background: radial-gradient(
@@ -57,10 +60,11 @@ body {
   display: none;
   font-size: 30px;
   text-align: center;
+  color: rgb(240, 231, 238);
 }
-// .results {
-//   display: none;
-// }
+.results {
+  display: none;
+}
 .res-info {
   display: flex;
   gap: 15px;
@@ -83,6 +87,13 @@ body {
   flex-direction: column;
   gap: 10px;
 }
+.res-def {
+  padding: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
 .res-item {
   padding: 10px;
   background-color: rgba(213, 202, 202, 0.3);
@@ -94,7 +105,11 @@ body {
   }
 
   &__defenition {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     font-size: 18px;
+    color: rgb(108, 107, 107);
   }
 
   &__example {

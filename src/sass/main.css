@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+li {
+  list-style: none;
+}
+
 body {
   background: rgb(238, 174, 202);
   background: radial-gradient(circle, rgb(238, 174, 202) 0%, rgb(148, 187, 233) 100%);
@@ -62,6 +66,11 @@ body {
   display: none;
   font-size: 30px;
   text-align: center;
+  color: rgb(240, 231, 238);
+}
+
+.results {
+  display: none;
 }
 
 .res-info {
@@ -89,6 +98,13 @@ body {
   gap: 10px;
 }
 
+.res-def {
+  padding: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
 .res-item {
   padding: 10px;
   background-color: rgba(213, 202, 202, 0.3);
@@ -99,7 +115,11 @@ body {
   margin-bottom: 10px;
 }
 .res-item__defenition {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   font-size: 18px;
+  color: rgb(108, 107, 107);
 }
 .res-item__example {
   font-size: 14px;
