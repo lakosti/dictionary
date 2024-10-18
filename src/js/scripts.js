@@ -62,7 +62,6 @@ const handleSubmit = async (evt) => {
   try {
     const res = await fetch(`${BASE_DIC_URL}${data.word}`);
     const value = await res.json(); //response have json method which help unpack data from res if status = ok
-    console.log(value);
 
     if (res.ok && value.length) {
       //кладемо дані щоб були доступні кругом (і лише перший елемент)

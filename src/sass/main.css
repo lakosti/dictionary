@@ -77,6 +77,8 @@ body {
 
 .res-sound {
   cursor: pointer;
+  width: 30px;
+  height: 30px;
 }
 
 .loader {
@@ -146,7 +148,6 @@ body {
   font-size: 24px;
   border-radius: 4px;
   margin-bottom: 15px;
-  justify-content: space-between;
 }
 
 .res-img {
@@ -192,6 +193,6 @@ body {
 .res-item__related {
   font-size: 16px;
   color: rgb(250, 250, 250);
-  background-color: rgba(161, 129, 161, 0.4);
+  background-color: rgba(94, 28, 94, 0.2);
   padding: 5px;
 }/*# sourceMappingURL=main.css.map */
