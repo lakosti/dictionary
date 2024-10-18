@@ -21,9 +21,8 @@
         <h1 class="title">Your Dictionary</h1>
 
         <form class="form">
-          <div class="input-wrap">
-            <div class="input">
               <input
+              class="input"
                 type="text"
                 placeholder="Enter a word.."
                 name="word"
@@ -31,10 +30,8 @@
                 autocomplete="off"
                 value=""
               />
-            </div>
             <button class="btn" type="submit">Search</button>
-          </div>
-        </form>
+          </form>
 
         <p class="error">Word not found</p>
         <div class="loader">
@@ -46,7 +43,7 @@
           </div>
         </div>
 
-        <div class="results">
+                <div class="results">
           <div class="res-info">
             <p class="res-word"></p>
 
@@ -65,6 +62,12 @@
           <ul class="res-list"></ul>
         </div>
       </div>
+
+        </div>
+
+
+
+
     </main>
 
     <script src="./src/js/scripts.js" type="module"></script>

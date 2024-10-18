@@ -24,7 +24,7 @@ body {
 }
 
 .container {
-  max-width: 700px; /* Optional max width */
+  max-width: 700px;
   padding: 25px;
   background-color: rgba(151, 111, 111, 0.2);
   margin: 0 auto;
@@ -38,21 +38,16 @@ body {
 }
 
 .form {
-  width: 600px;
+  max-width: 600px;
+  display: flex;
   margin: 0 auto;
+  gap: 10px;
   margin-bottom: 15px;
 }
 
-.input-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-
-.input > input {
+.input {
   padding: 8px;
-  width: 400px;
+  width: 100%;
 }
 
 .btn {

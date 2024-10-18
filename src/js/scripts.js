@@ -1,4 +1,4 @@
-import { BASE_URL } from "./constants.js";
+import { BASE_DIC_URL } from "./constants.js";
 import { renderItem } from "./renderFiles.js";
 import { hideLoader, showLoader } from "./utils.js";
 
@@ -26,12 +26,21 @@ const handleResults = () => {
 };
 
 const insertWord = () => {
-  if (data.phonetics[0].text) {
-    resWord.innerText =
-      data.word + " " + data.phonetics[0].text.replace(/^\/(.*)\/$/, "[$1]");
+  if (data.phonetics && data.phonetics.length > 0) {
+    const firstPhonetic = data.phonetics[0];
+    const secondPhonetic = data.phonetics[1];
+
+    if (firstPhonetic && firstPhonetic.text) {
+      resWord.innerText =
+        data.word + " " + firstPhonetic.text.replace(/^\/(.*)\/$/, "[$1]");
+    } else if (secondPhonetic && secondPhonetic.text) {
+      resWord.innerText =
+        data.word + " " + secondPhonetic.text.replace(/^\/(.*)\/$/, "[$1]");
+    } else {
+      resWord.innerText = data.word;
+    }
   } else {
-    resWord.innerText =
-      data.word + " " + data.phonetics[1].text.replace(/^\/(.*)\/$/, "[$1]");
+    resWord.innerText = data.word;
   }
 };
 
@@ -51,7 +60,7 @@ const handleSubmit = async (evt) => {
   showLoader();
 
   try {
-    const res = await fetch(`${BASE_URL}${data.word}`);
+    const res = await fetch(`${BASE_DIC_URL}${data.word}`);
     const value = await res.json(); //response have json method which help unpack data from res if status = ok
     console.log(value);
 

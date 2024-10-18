@@ -18,7 +18,6 @@ body {
   background-size: cover;
   background-attachment: fixed;
   font-family: "Sofia Sans", sans-serif;
-  // height: 100%;
   height: 100vh;
 }
 .main {
@@ -26,7 +25,7 @@ body {
   padding-bottom: 50px;
 }
 .container {
-  max-width: 700px; /* Optional max width */
+  max-width: 700px;
   padding: 25px;
   background-color: rgba(151, 111, 111, 0.2);
   margin: 0 auto;
@@ -38,21 +37,16 @@ body {
   margin-bottom: 20px;
 }
 .form {
-  width: 600px;
+  max-width: 600px;
+  display: flex;
   margin: 0 auto;
+  gap: 10px;
   margin-bottom: 15px;
 }
-.input-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-.input > input {
+.input {
   padding: 8px;
-  width: 400px;
+  width: 100%;
 }
-
 .btn {
   padding: 8px;
   width: 100px;
