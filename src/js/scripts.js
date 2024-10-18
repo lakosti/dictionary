@@ -26,9 +26,13 @@ const handleResults = () => {
 };
 
 const insertWord = () => {
-  resWord.innerText =
-    data.word + " " + data.phonetics[1].text.replace(/^\/(.*)\/$/, "[$1]");
-  // resWord.innerText = data.phonetics[1].text;
+  if (data.phonetics[0].text) {
+    resWord.innerText =
+      data.word + " " + data.phonetics[0].text.replace(/^\/(.*)\/$/, "[$1]");
+  } else {
+    resWord.innerText =
+      data.word + " " + data.phonetics[1].text.replace(/^\/(.*)\/$/, "[$1]");
+  }
 };
 
 const handleFindValue = (evt) => {
@@ -49,6 +53,7 @@ const handleSubmit = async (evt) => {
   try {
     const res = await fetch(`${BASE_URL}${data.word}`);
     const value = await res.json(); //response have json method which help unpack data from res if status = ok
+    console.log(value);
 
     if (res.ok && value.length) {
       //кладемо дані щоб були доступні кругом (і лише перший елемент)
@@ -80,11 +85,16 @@ const handleSubmit = async (evt) => {
 const handleSound = () => {
   //якщо взагалі шось є у phonetics
   if (data.phonetics.length) {
-    const sound = data.phonetics[1];
+    const sound = data.phonetics[0];
+    const soundNext = data.phonetics[1];
 
-    //*зробити окремо uk and us sound
+    //якщо не пустий рядок - грай, ні то йди далі
     if (sound.audio) {
       new Audio(sound.audio).play();
+    }
+    // якщо в першому немає, перевіряємо другий
+    else if (soundNext.audio) {
+      new Audio(soundNext.audio).play();
     }
   }
 };

@@ -9,11 +9,27 @@ export const getAllDef = (defs) => {
   return defs.map((def) => renderDefs(def)).join("");
 };
 
+const renderRelatedWords = (item) => {
+  return `${
+    item.antonyms.length > 0 || item.synonyms.length > 0
+      ? `
+  <div class="res-item__related">
+    ${item.antonyms.length > 0 ? "Antonyms: " + item.antonyms.join(", ") : ""}
+    ${item.synonyms.length > 0 ? "Synonyms: " + item.synonyms.join(", ") : ""}
+  </div>
+`
+      : ""
+  }`;
+};
+
 export const renderItem = (item) => {
   return `<li class="res-item">
     <span class="res-item__part">${item.partOfSpeech}</span>
     <div class="res-item__defenitions">
       ${getAllDef(item.definitions)}
     </div>
+
+${renderRelatedWords(item)}
+
   </li>`;
 };
