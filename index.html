@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="./src/sass/main.css" />
 
-    <link rel="icon" href="./src//img//book.png" type="image/x-icon" />
+    <link rel="icon" href="./src//img/book.png" type="image/x-icon" />
   </head>
   <body>
     <main class="main">
@@ -37,10 +37,19 @@
         </form>
 
         <p class="error">Word not found</p>
+        <div class="loader">
+          Loading
+          <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
 
         <div class="results">
           <div class="res-info">
             <p class="res-word"></p>
+
             <div class="res-sound">
               <img
                 src="./src/img/audio.png"
@@ -53,18 +62,7 @@
             <!-- <audio id="audioPlayer"></audio>; -->
           </div>
 
-          <ul class="res-list">
-            <!-- <li class="res-item">
-              <span class="res-item__part">Noun</span>
-
-              <div class="res-item__defenitions">
-                <div class="res-item__defenition">
-                  <p>ERGER ERER REGER</p>
-                  <div class="res-item__example">LOLOLOLO</div>
-                </div>
-              </div>
-            </li> -->
-          </ul>
+          <ul class="res-list"></ul>
         </div>
       </div>
     </main>

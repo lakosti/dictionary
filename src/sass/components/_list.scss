@@ -1,0 +1,31 @@
+.results {
+  display: none;
+}
+.res-info {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background-color: rgba(229, 220, 220, 0.3);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  font-size: 24px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+.res-img {
+  height: 30px;
+  cursor: pointer;
+}
+.res-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.res-def {
+  padding: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}

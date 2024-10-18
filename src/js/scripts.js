@@ -1,4 +1,6 @@
 import { BASE_URL } from "./constants.js";
+import { renderItem } from "./renderFiles.js";
+import { hideLoader, showLoader } from "./utils.js";
 
 const input = document.getElementById("word-input");
 const form = document.querySelector(".form");
@@ -15,29 +17,6 @@ let data = {
   phonetics: [],
 };
 
-const renderDefs = (item) => {
-  return ` <ul class="res-item__defenition">
-         <li class="res-def">${item.definition}</li>
-        <div class="res-item__example"> ${
-          item.example ? "Example: " + item.example : ""
-        }</div>
-      </ul>`;
-};
-
-const getAllDef = (defs) => {
-  //повертається масив строк -- тому джойнемо
-  return defs.map((def) => renderDefs(def)).join("");
-};
-
-const renderItem = (item) => {
-  return `<li class="res-item">
-    <span class="res-item__part">${item.partOfSpeech}</span>
-
-    <div class="res-item__defenitions">
-      ${getAllDef(item.definitions)}
-    </div>
-  </li>`;
-};
 const handleResults = () => {
   results.style.display = "block"; //показуємо результати
   list.innerHTML = ""; //перед новим запросом очищуємо айтеми
@@ -45,8 +24,11 @@ const handleResults = () => {
   //*в залежності від того скільки значень/результатів ми знайшли, ми будемо їх додавати в ліст за допомогою виклику функції рендеру розмітки
   data.meanings.forEach((item) => (list.innerHTML += renderItem(item)));
 };
+
 const insertWord = () => {
-  resWord.innerText = data.word;
+  resWord.innerText =
+    data.word + " " + data.phonetics[1].text.replace(/^\/(.*)\/$/, "[$1]");
+  // resWord.innerText = data.phonetics[1].text;
 };
 
 const handleFindValue = (evt) => {
@@ -61,6 +43,8 @@ const handleSubmit = async (evt) => {
   error.style.display = "none";
 
   if (!data.word.trim()) return; //if input is empty
+
+  showLoader();
 
   try {
     const res = await fetch(`${BASE_URL}${data.word}`);
@@ -79,21 +63,24 @@ const handleSubmit = async (evt) => {
 
       insertWord();
       handleResults();
+      hideLoader();
 
       input.value = "";
     } else if (res.status === 404) {
       error.style.display = "block";
       results.style.display = "none";
       input.value = "";
+      hideLoader();
     }
   } catch (error) {
     console.log(error);
   }
 };
+
 const handleSound = () => {
   //якщо взагалі шось є у phonetics
   if (data.phonetics.length) {
-    const sound = data.phonetics[0];
+    const sound = data.phonetics[1];
 
     //*зробити окремо uk and us sound
     if (sound.audio) {
